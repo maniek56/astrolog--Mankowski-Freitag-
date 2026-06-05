@@ -1,4 +1,5 @@
 import './App.css'
+import { planets, Planets } from "./assets/data.ts";
 
 function App() {
   return (
