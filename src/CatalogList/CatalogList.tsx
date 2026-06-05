@@ -7,7 +7,7 @@ interface CatalogListProps {
 function CatalogList(props: CatalogListProps) {
     return (
         <>
-            <div className="Catalog">
+            <div className="catalog">
                 <h2>Katalog</h2>
             {props.objects.map((obj) => (
                 <div key={obj.id} className="Elements"
