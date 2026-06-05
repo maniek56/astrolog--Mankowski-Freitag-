@@ -17,6 +17,8 @@ function DetailsScreen(props: DetailsScreenProps) {
                         <p>Typ: {obj.type}</p>
                         <p>Odległość: {obj.distanceFromEarth}</p>
                     </div>
+                    <button>Powrót</button>
+                    <button>Rejestr odkryć</button>
                 </div>
             ))}
         </>

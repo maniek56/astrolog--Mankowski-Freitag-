@@ -39,6 +39,7 @@ function DiscoveryForm() {
             />
 
             <button>Dodaj</button>
+            <button>Powrót</button>
         </>
     )
 }

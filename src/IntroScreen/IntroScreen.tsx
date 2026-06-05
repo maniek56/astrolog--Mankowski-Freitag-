@@ -3,6 +3,7 @@ function IntroScreen() {
         <>
             <div className="intro">
                 <p>Wybierz obiekt z katalogu, żeby zobaczyć szczegóły.</p>
+                <button>Rejestr odkryć</button>
             </div>
         </>
     )
