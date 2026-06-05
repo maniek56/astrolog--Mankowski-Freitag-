@@ -4,6 +4,7 @@ import {useState} from "react";
 import CatalogList from "./CatalogList/CatalogList.tsx";
 import IntroScreen from "./IntroScreen/IntroScreen.tsx";
 import DetailsScreen from "./DetailsScreen/DetailsScreen.tsx";
+import DiscoveryForm from "./DiscoveryForm/DiscoveryForm.tsx";
 
 function App() {
   const [objects] = useState<Planets[]>(planets);
@@ -16,7 +17,8 @@ function App() {
        <h1>AstroLog</h1>
        <CatalogList objects={objects}  onChange={setSelectedId} />
        <IntroScreen />
-       <DetailsScreen objects={selectedObject}/>
+       <DetailsScreen objects={selectedObject ? [selectedObject] : []} />
+       <DiscoveryForm/>
      </div>
     </>
   )
