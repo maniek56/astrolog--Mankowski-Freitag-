@@ -5,6 +5,7 @@ import CatalogList from "./CatalogList/CatalogList.tsx";
 
 function App() {
   const [objects] = useState<Planets[]>(planets);
+  const [chosenId, setChosenId] = useState<number>);
   //const photosTest = objects.map((obj: Planets) => obj.photo);
 
   return (
@@ -14,7 +15,7 @@ function App() {
        {/*{{photosTest.map((photo, index) => (
            <img key={index} src={photo}  width="100"/>
        ))}}*/}
-       <CatalogList objects={objects} />
+       <CatalogList objects={objects}  />
      </div>
     </>
   )
