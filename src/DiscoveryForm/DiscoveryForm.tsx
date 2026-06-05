@@ -16,7 +16,7 @@ function DiscoveryForm() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-            </div>
+
             <input
                 type="text"
                 placeholder="Typ"
@@ -40,6 +40,7 @@ function DiscoveryForm() {
 
             <button>Dodaj</button>
             <button>Powrót</button>
+            </div>
         </>
     )
 }
