@@ -6,12 +6,13 @@ import uran from "./assets/uran.png";
 
 export interface Planets {
     id: number;
+    name: string;
     photo: string;
 }
 export const planets: Planets[] = [
-    { id:  1, photo: merkury, },
-    { id:  2, photo: jowisz, },
-    { id:  3, photo: saturn, },
-    { id:  4, photo: mars, },
-    { id:  5, photo: uran, },
+    { id:  1, name: "Merkury", photo: merkury, },
+    { id:  2, name: "Jowisz", photo: jowisz, },
+    { id:  3, name: "Saturn", photo: saturn, },
+    { id:  4, name: "Mars", photo: mars, },
+    { id:  5, name: "Uran", photo: uran, },
 ]
