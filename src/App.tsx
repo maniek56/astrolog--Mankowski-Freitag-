@@ -2,6 +2,7 @@ import './App.css'
 import { planets, type Planets } from "./data.ts";
 import {useState} from "react";
 import CatalogList from "./CatalogList/CatalogList.tsx";
+import IntroScreen from "./IntroScreen/IntroScreen.tsx";
 
 function App() {
   const [objects] = useState<Planets[]>(planets);
@@ -17,6 +18,7 @@ function App() {
            <img key={index} src={photo}  width="100"/>
        ))}}*/}
        <CatalogList objects={objects}  onChange={setChosenId}/>
+       <IntroScreen />
      </div>
     </>
   )
