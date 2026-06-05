@@ -1,7 +1,6 @@
 function IntroScreen() {
     return (
         <>
-
         </>
     )
 }
