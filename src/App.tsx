@@ -3,22 +3,20 @@ import { planets, type Planets } from "./data.ts";
 import {useState} from "react";
 import CatalogList from "./CatalogList/CatalogList.tsx";
 import IntroScreen from "./IntroScreen/IntroScreen.tsx";
+import DetailsScreen from "./DetailsScreen/DetailsScreen.tsx";
 
 function App() {
   const [objects] = useState<Planets[]>(planets);
-  const [chosenId, setChosenId] = useState<number | null>(null);
-  console.log(chosenId);
-  //const photosTest = objects.map((obj: Planets) => obj.photo);
+  const [selectId, setSelectedId] = useState<number | null>(null);
+  const selectedObject = objects.find((object) => object.id === selectId) || null;
 
   return (
     <>
      <div className="App">
        <h1>AstroLog</h1>
-       {/*{{photosTest.map((photo, index) => (
-           <img key={index} src={photo}  width="100"/>
-       ))}}*/}
-       <CatalogList objects={objects}  onChange={setChosenId}/>
+       <CatalogList objects={objects}  onChange={setSelectedId} />
        <IntroScreen />
+       <DetailsScreen objects={selectedObject}/>
      </div>
     </>
   )
