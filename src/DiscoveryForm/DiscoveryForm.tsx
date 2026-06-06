@@ -1,13 +1,32 @@
 import { useState } from "react";
 
-function DiscoveryForm() {
+interface DiscoveryFormProps {
+    onAddPlanet: (newPlanet: any) => void;
+}
+
+function DiscoveryForm(props: DiscoveryFormProps) {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
     const [directionFromEarth, setDirectionFromEarth] = useState("");
     const [photo, setPhoto] = useState("");
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        props.onAddPlanet({
+            name,
+            type,
+            distanceFromEarth: directionFromEarth,
+            photo
+        });
+        setName("");
+        setType("");
+        setDirectionFromEarth("");
+        setPhoto("");
+    };
+
     return (
         <>
-            <div className="form">
+            <form className="form" onSubmit={handleSubmit}>
                 <h2>Zgłoś obiekt</h2>
 
                 <input
@@ -17,31 +36,32 @@ function DiscoveryForm() {
                     onChange={(e) => setName(e.target.value)}
                 />
 
-            <input
-                type="text"
-                placeholder="Typ"
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-            />
+                <input
+                    type="text"
+                    placeholder="Typ"
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                />
 
-            <input
-                type="text"
-                placeholder="Odległość"
-                value={directionFromEarth}
-                onChange={(e) => setDirectionFromEarth(e.target.value)}
-            />
+                <input
+                    type="text"
+                    placeholder="Odległość"
+                    value={directionFromEarth}
+                    onChange={(e) => setDirectionFromEarth(e.target.value)}
+                />
 
-            <input
-                type="text"
-                placeholder="Link do zdjęcia"
-                value={photo}
-                onChange={(e) => setPhoto(e.target.value)}
-            />
+                <input
+                    type="text"
+                    placeholder="Link do zdjęcia"
+                    value={photo}
+                    onChange={(e) => setPhoto(e.target.value)}
+                />
 
-            <button>Dodaj</button>
-            <button>Powrót</button>
-            </div>
+                {/* Przycisk musi być 'submit', żeby zadziałał formularz */}
+                <button type="submit">Dodaj</button>
+                <button type="button">Powrót</button>
+            </form>
         </>
     )
 }
-export default DiscoveryForm
+export default DiscoveryForm;
