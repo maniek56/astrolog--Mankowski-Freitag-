@@ -2,6 +2,8 @@ import { type Planets } from "../data.ts";
 
 interface DetailsScreenProps {
     objects: Planets[];
+    onBack: () => void;
+    onOpenForm: () => void;
 }
 
 function DetailsScreen(props: DetailsScreenProps) {
@@ -15,10 +17,10 @@ function DetailsScreen(props: DetailsScreenProps) {
                     <div className="description">
                         <h3>{obj.name}</h3>
                         <p>Typ: {obj.type}</p>
-                        <p>Odległość: {obj.distanceFromEarth}</p>
+                        <p>Odległość od Ziemi: {obj.distanceFromEarth}</p>
                     </div>
-                    <button>Powrót</button>
-                    <button>Rejestr odkryć</button>
+                    <button onClick={props.onBack}>Powrót</button>
+                    <button onClick={props.onOpenForm}>Rejestr odkryć</button>
                 </div>
             ))}
         </>
