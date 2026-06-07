@@ -7,7 +7,7 @@ interface DiscoveryFormProps {
 function DiscoveryForm(props: DiscoveryFormProps) {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
-    const [directionFromEarth, setDirectionFromEarth] = useState("");
+    const [distanceFromEarth, setDistanceFromEarth] = useState("");
     const [photo, setPhoto] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -15,12 +15,12 @@ function DiscoveryForm(props: DiscoveryFormProps) {
         props.onAddPlanet({
             name,
             type,
-            distanceFromEarth: directionFromEarth,
+            distanceFromEarth: distanceFromEarth,
             photo
         });
         setName("");
         setType("");
-        setDirectionFromEarth("");
+        setDistanceFromEarth("");
         setPhoto("");
     };
 
@@ -46,8 +46,8 @@ function DiscoveryForm(props: DiscoveryFormProps) {
                 <input
                     type="text"
                     placeholder="Odległość"
-                    value={directionFromEarth}
-                    onChange={(e) => setDirectionFromEarth(e.target.value)}
+                    value={distanceFromEarth}
+                    onChange={(e) => setDistanceFromEarth(e.target.value)}
                 />
 
                 <input
