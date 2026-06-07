@@ -10,7 +10,7 @@ function CatalogList(props: CatalogListProps) {
             <div className="catalog">
                 <h2>Katalog</h2>
             {props.objects.map((obj) => (
-                <div key={obj.id} className="Elements"
+                <div key={obj.id} className="elements"
                     onClick={() => props.onChange(obj.id)}>
                     <p>{obj.name}</p>
                 </div>

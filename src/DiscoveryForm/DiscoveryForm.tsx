@@ -8,14 +8,14 @@ function DiscoveryForm(props: DiscoveryFormProps) {
     // Kontrolowane inputy (wymaganie z treści projektu)
     const [name, setName] = useState("");
     const [type, setType] = useState("");
-    const [directionFromEarth, setDirectionFromEarth] = useState("");
+    const [distanceFromEarth, setDistanceFromEarth] = useState("");
     const [photo, setPhoto] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         // 1. WALIDACJA (Blokada pustych pól)
-        if (!name.trim() || !type.trim() || !directionFromEarth.trim() || !photo.trim()) {
+        if (!name.trim() || !type.trim() || !distanceFromEarth.trim() || !photo.trim()) {
             alert("Błąd: Wszystkie pola muszą być wypełnione przed zgłoszeniem odkrycia!");
             return; // Przerwa działanie, dane nie lecą do rodzica
         }
@@ -24,14 +24,14 @@ function DiscoveryForm(props: DiscoveryFormProps) {
         props.onAddPlanet({
             name,
             type,
-            distanceFromEarth: directionFromEarth,
+            distanceFromEarth: distanceFromEarth,
             photo
         });
 
         // 3. CZYSZCZENIE (Automatyczne zerowanie pól po zatwierdzeniu)
         setName("");
         setType("");
-        setDirectionFromEarth("");
+        setDistanceFromEarth("");
         setPhoto("");
     };
 
@@ -53,12 +53,20 @@ function DiscoveryForm(props: DiscoveryFormProps) {
                 onChange={(e) => setType(e.target.value)}
             />
 
+
             <input
                 type="text"
                 placeholder="Odległość"
-                value={directionFromEarth}
-                onChange={(e) => setDirectionFromEarth(e.target.value)}
+                value={distanceFromEarth}
+                onChange={(e) => setDistanceFromEarth(e.target.value)}
             />
+                <input
+                    type="text"
+                    placeholder="Odległość"
+                    value={distanceFromEarth}
+                    onChange={(e) => setDistanceFromEarth(e.target.value)}
+                />
+
 
             <input
                 type="text"
